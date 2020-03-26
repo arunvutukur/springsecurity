@@ -28,11 +28,15 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 			.withUser(users.username("susan").password("test123").roles("MANAGER","ADMIN"));
 	}
 	
+	//Here is where u give access based on the authentication
+	
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 
 		http.authorizeRequests()
-				.anyRequest().authenticated()
+				.antMatchers("/").hasRole("EMPLOYEE")
+				.antMatchers("/leaders/**").hasRole("MANAGER")
+				.antMatchers("/systems/**").hasRole("ADMIN")				
 			.and()
 			.formLogin()
 				.loginPage("/showMyLoginPage")

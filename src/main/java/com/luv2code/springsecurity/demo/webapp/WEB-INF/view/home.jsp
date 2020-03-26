@@ -18,6 +18,16 @@
 	Role(s): <security:authentication property ="principal.authorities" />
 	</p>
 	
+	<hr>
+	<!-- Add a link to point to /leaders...this is for managers -->
+	
+	<p>
+	<a href="${pageContext.request.contextPath}/leaders">Leadership Meeting</a>
+	(only for Manager Peeps)
+	
+	<hr>
+	
+	
 	<!-- Add a logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" 
 			   method="POST">

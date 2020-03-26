@@ -18,5 +18,12 @@ public class DemoController {
 	}
 	
 	
+	@GetMapping("/leaders")
+	public String showLeaders() {
+		
+		return "leaders";
+	}
+	
+	
 	
 }
