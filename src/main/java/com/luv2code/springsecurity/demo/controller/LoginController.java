@@ -7,9 +7,17 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class LoginController {
 
 		// TODO Auto-generated constructor stub
-			@GetMapping("/showMyLoginPage")
+		@GetMapping("/showMyLoginPage")
 		public String showMyLoginPage() {
 			
 			return "fancy-login";			
 		}
+			
+		//add a request mapping for /access denied	
+		@GetMapping("/accessdenied")
+		public String showDeniedPage() {
+			
+			return "accessdenied";			
+		}
+			
 }
