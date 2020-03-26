@@ -32,6 +32,19 @@
 	
 	<hr>
 	
+	<!-- Adding an admin page here -->
+	
+    <security:authorize access="hasRole('ADMIN')">
+	
+	<a href="${pageContext.request.contextPath}/admin">IT Administrators</a>
+	(only for Admin Peeps)
+	
+	</security:authorize>
+	
+	<hr>
+	
+	
+	
 	
 	<!-- Add a logout button -->
 	<form:form action="${pageContext.request.contextPath}/logout" 

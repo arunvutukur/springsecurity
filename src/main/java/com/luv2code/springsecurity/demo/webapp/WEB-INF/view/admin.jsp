@@ -1,12 +1,12 @@
 <html>
 	<head>
 
-		<title>Leaders Page</title>
+		<title>IT Admin Page</title>
 		
 	</head>
 	
 	
-	<h2> Welcome to Leaders Page</h2>
+	<h2> Welcome to IT Admin Page</h2>
 	
 	<hr>
 	

@@ -24,6 +24,11 @@ public class DemoController {
 		return "leaders";
 	}
 	
+	@GetMapping("/admin")
+	public String showAdmin() {
+		
+		return "admin";
+	}
 	
 	
 }

@@ -25,7 +25,9 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		auth.inMemoryAuthentication()
 			.withUser(users.username("john").password("test123").roles("EMPLOYEE"))
 			.withUser(users.username("mary").password("test123").roles("EMPLOYEE","MANAGER"))
-			.withUser(users.username("susan").password("test123").roles("MANAGER","ADMIN"));
+			.withUser(users.username("susan").password("test123").roles("EMPLOYEE","MANAGER","ADMIN"))
+			.withUser(users.username("buddy").password("test123").roles("EMPLOYEE","ADMIN"))
+			.withUser(users.username("user").password("test").roles("ADMIN"));
 	}
 	
 	//Here is where u give access based on the authentication
@@ -36,7 +38,7 @@ public class DemoSecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 				.antMatchers("/").hasRole("EMPLOYEE")
 				.antMatchers("/leaders/**").hasRole("MANAGER")
-				.antMatchers("/systems/**").hasRole("ADMIN")				
+				.antMatchers("/admin/**").hasRole("ADMIN")				
 			.and()
 			.formLogin()
 				.loginPage("/showMyLoginPage")
